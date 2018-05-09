@@ -57,11 +57,11 @@ contract('EthereumCenturion', (accounts) => {
 
         await contract.buyTokens(accounts[3], {from:accounts[3], value: 0.001 * 10**18});
         var balanceAccountThreeAfter = await contract.balanceOf(accounts[3]);
-        assert.equal(3100 * 10**8, Number(balanceAccountThreeAfter));
+        assert.equal(3600 * 10**8, Number(balanceAccountThreeAfter));
 
         await contract.buyTokens(accounts[3], {from:accounts[3], value: 0.1 * 10**18});
         var balanceAccountThreeAfter = await contract.balanceOf(accounts[3]);
-        assert.equal(363100 * 10**8, Number(balanceAccountThreeAfter));
+        assert.equal(364100 * 10**8, Number(balanceAccountThreeAfter));
 
         //await contract.buyTokens(accounts[3], {from:accounts[3], value: 10 * 10**8});
     });

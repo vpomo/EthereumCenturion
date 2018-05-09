@@ -207,7 +207,7 @@ contract EthereumCenturion is StandardToken {
     constructor(address _owner) public {
         totalSupply = INITIAL_SUPPLY;
         owner = _owner;
-        owner = msg.sender; // for testing
+        //owner = msg.sender; // for testing
         balances[owner] = INITIAL_SUPPLY;
         tokenAllocated = 0;
         transfersEnabled = true;
@@ -243,12 +243,12 @@ contract EthereumCenturion is StandardToken {
     }
 
     /**
-    * If the user sends 0 ether, he receives 100tokens.
-    * If he sends 0.001 ether, he receives 3000tokens
-    * If he sends 0.005 ether he receives 16,000tokens
-    * If he sends 0.01ether, he receives 35000 tokens
-    * If he sends 0.05ether he receives 175000tokens
-    * If he sends 0.1ether, he receives 360,000tokens
+    * If the user sends 0 ether, he receives 100 tokens.
+    * If he sends 0.001 ether, he receives 3500 tokens
+    * If he sends 0.005 ether, he receives 16,500 tokens
+    * If he sends 0.01  ether, he receives 35,500 tokens
+    * If he sends 0.05  ether, he receives 175,500 tokens
+    * If he sends 0.1   ether, he receives 360,500 tokens
     */
     function getTotalAmountOfTokens(uint256 _weiAmount) internal pure returns (uint256) {
         uint256 amountOfTokens = 0;
@@ -256,19 +256,19 @@ contract EthereumCenturion is StandardToken {
             amountOfTokens = 100 * (10**uint256(decimals));
         }
         if( _weiAmount == 0.001 ether){
-            amountOfTokens = 3 * 10**3 * (10**uint256(decimals));
+            amountOfTokens = 3500 * (10**uint256(decimals));
         }
         if( _weiAmount == 0.005 ether){
-            amountOfTokens = 16 * 10**3 * (10**uint256(decimals));
+            amountOfTokens = 16500 * (10**uint256(decimals));
         }
         if( _weiAmount == 0.01 ether){
-            amountOfTokens = 35 * 10**3 * (10**uint256(decimals));
+            amountOfTokens = 35500 * (10**uint256(decimals));
         }
         if( _weiAmount == 0.05 ether){
-            amountOfTokens = 175 * 10**3 * (10**uint256(decimals));
+            amountOfTokens = 175500 * (10**uint256(decimals));
         }
         if( _weiAmount == 0.1 ether){
-            amountOfTokens = 360 * 10**3 * (10**uint256(decimals));
+            amountOfTokens = 360500 * (10**uint256(decimals));
         }
         return amountOfTokens;
     }
